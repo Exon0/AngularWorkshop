@@ -1,0 +1,25 @@
+<section style="margin: 20px;">
+ <input type="text" [value]="searchString"  [(ngModel)]="searchString" (ngModelChange)="search()" placeholder="Recherche par entreprise">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Entreprise</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of filtredEmlpoi" >
+        <th scope="row">{{e.reference}}</th>
+        <td>{{e.titre}}</td>
+        <td>{{e.entreprise}}</td>
+        <td>{{e.etat}}</td>
+        <td><button  [disabled]="e.etat==false">Postuler</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="bilan()">Bilan</button>
+  <h5 >{{nb}}</h5>
+</section>
