@@ -18,7 +18,10 @@ export class OffresEmploiComponentComponent {
 
     
   ];
-  filtredEmlpoi:Emploi[]=[];
+  filtredEmlpoi:Emploi[]=[ {reference: "emp1",titre:"webDev",entreprise:"Esprit",etat:false},
+  {reference: "emp2",titre:"Designer",entreprise:"Actia",etat:true},
+  {reference: "emp3",titre:"IT support",entreprise:"ooredoo",etat:false},
+  {reference: "emp4",titre:"Manager",entreprise:"STEG",etat:true},];
   nb!:number;
   bilan() {
     this.nb=0;
@@ -29,11 +32,11 @@ export class OffresEmploiComponentComponent {
   }
 
   search(){
- if(this.searchString== "")
-this.filtredEmlpoi=this.listeEmlpoi;
+
   
- else if(this.searchString.length>=1 )  {   this.filtredEmlpoi=this.listeEmlpoi.filter(Emploi=>Emploi.entreprise.includes(this.searchString));
-  }
+ if(this.searchString.length>=1 )  {   this.filtredEmlpoi=this.listeEmlpoi.filter(Emploi=>Emploi.entreprise.includes(this.searchString));}
+  else {this.filtredEmlpoi=this.listeEmlpoi;}
+  
 }
 
   

@@ -1,47 +1,44 @@
-<h2>Add New Article</h2>>
-<form >
+<div style="margin: 300px; box-shadow: inset;background-color: antiquewhite;">
+<h2 style="  text-align: center;">Add New Article</h2>
+
+<form style="margin-left: 300px;" #addForm="ngForm" (ngSubmit)="add(addForm)">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-      </div>
+        <label for="titre">Titre</label>
+        <input  type="text" class="form-control" #titre="ngModel"  name="titre"  [(ngModel)]="A.titre"  required>
+            <span style="color: red;"    *ngIf="titre.invalid && (titre.touched || titre.dirty)">Le titre est obligatoire!</span>
+    </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-      </div>
+        <label for="contenu">contenu</label>
+        <textarea type="text" class="form-control" #contenu="ngModel" name="contenu"  [(ngModel)]="A.contenu" ngModel minlength="10"></textarea>
+        <span style="color: red;" *ngIf="contenu.invalid && (contenu.touched || contenu.dirty)">Le contenu doit contenir 10 caractére au minimum!</span>
+
     </div>
-    <div class="form-group">
-      <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  
+   
+    
     </div>
-    <div class="form-group">
-      <label for="inputAddress2">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <div class="form-group col-md-6">
+      <label for="auteur">auteur</label>
+      <input type="text" class="form-control" #auteur="ngModel" name="auteur" [(ngModel)]="A.auteur" ngModel maxlength="15" minlength="3 ">
+      <span style="color: red;" *ngIf="auteur.invalid && (auteur.touched || auteur.dirty)">Ce cchamps doit contenir entre 3 et 15 caractéres!</span>
+
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
+
+
+    <div class="form-group col-md-6">
+      <label for="inputAddress2">date</label>
+      <input type="date" class="form-control" id="inputAddress2" name="date" [(ngModel)]="A.date" ngModel>
     </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
+    <div *ngIf="contenu.valid && titre.valid && (titre.touched || titre.dirty) && (contenu.touched || contenu.dirty) && (auteur.touched || auteur.dirty) && auteur.valid" class="form-group col-md-6">
+        <label for="categorie">Categorie</label>
+        <input type="text" class="form-control" #categorie="ngModel" name="date" [(ngModel)]="A.categorie" ngModel required="">
+        <span style="color: red;" *ngIf="categorie.invalid && (categorie.touched || categorie.dirty)">Ce champs est obligatoire</span>
+ 
     </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
+ 
+    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Ajouter</button>
   </form>
+</div>
+
+{{A.titre}}

@@ -3,7 +3,7 @@ export class Article{
     titre!:string;
     contenu!:string;
     auteur!:string;
-    date!:string;
+    date!:Date;
         categorie!:string;
 
 }

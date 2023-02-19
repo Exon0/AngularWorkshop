@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from 'src/models/article';
+import { Article } from 'src/models/Article';
 
 @Component({
   selector: 'app-articles-component',
@@ -14,21 +14,21 @@ listeArticle:Article[]=[
     titre:"CMD",
     contenu:"CMD QATAR 2022",
     auteur:"MED",
-    date:"02/02/2022",
+    date:new Date(),
     categorie:"Travail"
   },
   {    
     titre:"CMD",
     contenu:"CMD QATAR 2022",
     auteur:"MED",
-    date:"02/02/2022",
+    date:new Date(),
     categorie:"Education"
   },
   {    
     titre:"CMD",
     contenu:"CMD QATAR 2022",
     auteur:"MED",
-    date:"02/02/2022",
+    date:new Date(),
     categorie:"Travail"
   }
 ]
