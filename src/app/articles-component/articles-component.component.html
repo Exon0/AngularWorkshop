@@ -1,5 +1,11 @@
 <p>{{titre}}</p>
-<input type="text" [value]="listeArticle.length" [(ngModel)]="nb" >
+<span>
+  <input type="text" [value]="listeArticle.length" [(ngModel)]="nb" >
+
+  <button style="margin-left: 200px;" class="btn btn-secondary" [routerLink]="['/addArticle']">Ajouter un article</button>
+
+</span>
+
 <div class="row" style="width: 50%;">
     <div  *ngFor="let a of listeArticle">
 
