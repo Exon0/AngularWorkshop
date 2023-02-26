@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from 'src/models/Article';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-articles-component',
@@ -7,32 +8,17 @@ import { Article } from 'src/models/Article';
   styleUrls: ['./articles-component.component.css']
 })
 export class ArticlesComponentComponent {
+on() {
+  var s="titre";
+  console.log(this.prodcutSeervice.getNumberOf(this.listeArticle,s,"CMD"));
+
+}
+
+  constructor(private prodcutSeervice:ProductService){}
 titre:string="Les articles du jour";
 nb!:string;
-listeArticle:Article[]=[
-  {    
-    titre:"CMD",
-    contenu:"CMD QATAR 2022",
-    auteur:"MED",
-    date:new Date(),
-    categorie:"Travail"
-  },
-  {    
-    titre:"CMD",
-    contenu:"CMD QATAR 2022",
-    auteur:"MED",
-    date:new Date(),
-    categorie:"Education"
-  },
-  {    
-    titre:"CMD",
-    contenu:"CMD QATAR 2022",
-    auteur:"MED",
-    date:new Date(),
-    categorie:"Travail"
-  }
-]
-
+listeArticle=this.prodcutSeervice.listeArticle;
+ 
 ngOnInit() {
   this.nb = this.listeArticle.length.toString();
 }

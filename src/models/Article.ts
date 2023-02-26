@@ -4,6 +4,7 @@ export class Article{
     contenu!:string;
     auteur!:string;
     date!:Date;
-        categorie!:string;
+    categorie!:string;
+    [key: string]: any;
 
 }
