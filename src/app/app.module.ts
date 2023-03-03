@@ -11,7 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddArticleComponent } from './add-article/add-article.component';
-import {HttpClientModule } from '@angular/common/http'
+import {HttpClientModule } from '@angular/common/http';
+import { UpdateFormComponent } from './update-form/update-form.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule } from '@angular/common/http'
     HeaderComponent,
     HomeComponent,
     NotFoundComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    UpdateFormComponent
   ],
   imports: [
     BrowserModule,

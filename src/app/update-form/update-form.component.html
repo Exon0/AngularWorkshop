@@ -1,0 +1,44 @@
+<div style="margin: 300px; box-shadow: inset;background-color: antiquewhite;">
+    <h2 style="  text-align: center;">Add New Article</h2>
+    
+    <form style="margin-left: 300px;" #updateForm="ngForm" (ngSubmit)="update(updateForm)">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="titre">Titre</label>
+            <input  type="text" class="form-control" #titre="ngModel"  name="titre"  [(ngModel)]="A.titre"  required>
+                <span style="color: red;"    *ngIf="titre.invalid && (titre.touched || titre.dirty)">Le titre est obligatoire!</span>
+        </div>
+          <div class="form-group col-md-6">
+            <label for="contenu">contenu</label>
+            <textarea type="text" class="form-control" #contenu="ngModel" name="contenu"  [(ngModel)]="A.contenu" ngModel minlength="10"></textarea>
+            <span style="color: red;" *ngIf="contenu.invalid && (contenu.touched || contenu.dirty)">Le contenu doit contenir 10 caractére au minimum!</span>
+    
+        </div>
+      
+       
+        
+        </div>
+        <div class="form-group col-md-6">
+          <label for="auteur">auteur</label>
+          <input type="text" class="form-control" #auteur="ngModel" name="auteur" [(ngModel)]="A.auteur" ngModel maxlength="15" minlength="3 ">
+          <span style="color: red;" *ngIf="auteur.invalid && (auteur.touched || auteur.dirty)">Ce cchamps doit contenir entre 3 et 15 caractéres!</span>
+    
+        </div>
+    
+    
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">date</label>
+          <input type="date" class="form-control" id="inputAddress2" name="date" [(ngModel)]="A.date" ngModel>
+        </div>
+        <div *ngIf="contenu.valid && titre.valid && (titre.touched || titre.dirty) && (contenu.touched || contenu.dirty) && (auteur.touched || auteur.dirty) && auteur.valid" class="form-group col-md-6">
+            <label for="categorie">Categorie</label>
+            <input type="text" class="form-control" #categorie="ngModel" name="date" [(ngModel)]="A.categorie" ngModel required="">
+            <span style="color: red;" *ngIf="categorie.invalid && (categorie.touched || categorie.dirty)">Ce champs est obligatoire</span>
+     
+        </div>
+     
+        <button [disabled]="updateForm.invalid" type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+    
+    {{A.titre}}

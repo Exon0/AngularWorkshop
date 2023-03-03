@@ -1,12 +1,11 @@
 {
   "Article": [
     {
-      "id": 1,
-      "titre": "CMD1",
+      "titre": "CMD12",
       "contenu": "CMD QATAR 2022",
       "auteur": "MED",
       "date": "2022/02/03",
-      "categorie": "Travail"
+      "id": 1
     },
     {
       "id": 2,
@@ -15,6 +14,13 @@
       "auteur": "MED",
       "date": "2022/02/03",
       "categorie": "Education"
+    },
+    {
+      "titre": "java",
+      "contenu": " test java",
+      "auteur": " ilyes",
+      "date": "tic",
+      "id": 3
     }
   ],
   "posts": [

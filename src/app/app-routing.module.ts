@@ -5,6 +5,7 @@ import { ArticlesComponentComponent } from './articles-component/articles-compon
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OffresEmploiComponentComponent } from './offres-emploi-component/offres-emploi-component.component';
+import { UpdateFormComponent } from './update-form/update-form.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -13,6 +14,9 @@ const routes: Routes = [
   {path:"article",component:ArticlesComponentComponent},
   {path:"offre",component:OffresEmploiComponentComponent},
   {path:"addArticle",component:AddArticleComponent},
+  {path:'updateArticle/:id',component:UpdateFormComponent},
+
+
 
 
   {path:"**",component:NotFoundComponent},

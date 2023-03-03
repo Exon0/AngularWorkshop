@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'src/models/Article';
 import { ArticleService } from '../services/article.service';
 
@@ -15,7 +16,7 @@ on() {
 }
 
 
-  constructor(private prodcutSeervice:ArticleService){}
+  constructor(private prodcutSeervice:ArticleService,private router:Router){}
 titre:string="Les articles du jour";
 nb!:string;
 listeArticle!:any;
@@ -27,6 +28,14 @@ ngOnInit() {
   console.log(this.listeArticle)
 }
 
+
 deleteArticles(id:number){
-  this.prodcutSeervice.deleteArticle(id).subscribe(); }
+  this.prodcutSeervice.deleteArticle(id).subscribe();
+  this.prodcutSeervice.getAllArticles().subscribe(val=>this.listeArticle=val);
+}
+
+modifyArticle(id:number){
+  //article:any  = this.prodcutSeervice.getArticleById(id);
+}
+
 }

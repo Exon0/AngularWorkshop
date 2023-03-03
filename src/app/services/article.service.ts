@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { count } from 'rxjs';
+import { count, Observable } from 'rxjs';
 import { Article } from 'src/models/Article';
 
 @Injectable({
@@ -23,8 +23,8 @@ export class ArticleService {
     return this.http.get(this.url);
   }
 
-  getArticleById(id:number){
-    return this.http.get(this.url+`/$id`);
+  getArticleById(id:number):Observable<Article>{
+    return this.http.get<Article>(this.url+"/"+id);
   }
 
   addArticle(a: Article){
@@ -33,10 +33,10 @@ export class ArticleService {
 
 
   updateArticle(id:number,a:Article){
-    return  this.http.put(this.url+`/$id`,a);
+    return  this.http.put(this.url+"/"+id,a);
   }
 
   deleteArticle(id:number){
-    return this.http.delete(this.url+'/'+id);
+    return this.http.delete<Article>(this.url+'/'+id);
   }
 }
