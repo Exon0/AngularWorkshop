@@ -1,0 +1,37 @@
+{
+  "Article": [
+    {
+      "id": 1,
+      "titre": "CMD1",
+      "contenu": "CMD QATAR 2022",
+      "auteur": "MED",
+      "date": "2022/02/03",
+      "categorie": "Travail"
+    },
+    {
+      "id": 2,
+      "titre": "CMD",
+      "contenu": "CMD QATAR 2022",
+      "auteur": "MED",
+      "date": "2022/02/03",
+      "categorie": "Education"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

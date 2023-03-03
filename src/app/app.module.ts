@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddArticleComponent } from './add-article/add-article.component';
+import {HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -26,8 +27,8 @@ import { AddArticleComponent } from './add-article/add-article.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-  ],
+    FormsModule,
+    HttpClientModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })

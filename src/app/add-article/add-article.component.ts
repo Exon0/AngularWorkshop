@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Article } from 'src/models/Article';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-add-article',
@@ -9,15 +10,12 @@ import { Article } from 'src/models/Article';
 })
 export class AddArticleComponent {
 
-  A:Article={    
-    titre:"",
-    contenu:"",
-    auteur:"",
-    date:new Date(),
-    categorie:""
-  } 
+  constructor(private Myservice:ArticleService){}
+
+  A!:Article;
    add(F: NgForm){
     console.log(F);
+    this.Myservice.addArticle(F.value).subscribe();
   }
 
 }

@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { OffresEmploiComponentComponent } from './offres-emploi-component/offres-emploi-component.component';
 
 const routes: Routes = [
+  {path:"",component:HomeComponent},
   {path:"home",component:HomeComponent},
 
   {path:"article",component:ArticlesComponentComponent},

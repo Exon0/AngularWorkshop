@@ -2,7 +2,8 @@
 width: 50%;padding: 10px;">
 <h2 style="color: darkseagreen;margin-left: 250px;">{{titre}}</h2>
 <span>
-  <input type="text" [value]="listeArticle.length" [(ngModel)]="nb" >
+
+  <input type="text"  [(ngModel)]="nb" >
 
   <button style="margin-left: 400px;" class="btn btn-primary" [routerLink]="['/addArticle']">Ajouter un article</button>
 
@@ -22,6 +23,8 @@ width: 50%;padding: 10px;">
           <p class="card-text">{{a.contenu}}</p>
 
           <a href="#" class="btn btn-primary">More</a>
+          <a (click)="deleteArticles(a.id)" class="btn btn-danger">Delete</a>
+
         </div>
     </div>
     </div>

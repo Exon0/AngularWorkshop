@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from 'src/models/Article';
-import { ProductService } from '../services/product.service';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-articles-component',
@@ -14,12 +14,19 @@ on() {
 
 }
 
-  constructor(private prodcutSeervice:ProductService){}
+
+  constructor(private prodcutSeervice:ArticleService){}
 titre:string="Les articles du jour";
 nb!:string;
-listeArticle=this.prodcutSeervice.listeArticle;
+listeArticle!:any;
  
 ngOnInit() {
-  this.nb = this.listeArticle.length.toString();
+  //this.nb = this.listeArticle;
+ // this.nb=this.listeArticle.subscribe();
+  this.prodcutSeervice.getAllArticles().subscribe(val=>this.listeArticle=val);
+  console.log(this.listeArticle)
 }
+
+deleteArticles(id:number){
+  this.prodcutSeervice.deleteArticle(id).subscribe(); }
 }

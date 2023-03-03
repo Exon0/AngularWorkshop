@@ -4,7 +4,7 @@ import { Emploi } from 'src/models/Emlpoi';
 @Component({
   selector: 'app-offres-emploi-component',
   templateUrl: './offres-emploi-component.component.html',
-  styleUrls: ['./offres-emploi-component.component.css']
+  styleUrls: ['./offres-emploi-component.component.css'],
 })
 export class OffresEmploiComponentComponent {
 
