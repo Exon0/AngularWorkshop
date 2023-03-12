@@ -1,0 +1,17 @@
+      <!-- <div class="card" *ngIf="item.categorie=='Travail'"> -->
+
+               <div class="card"> 
+
+        <div class="card-body" [ngStyle]="{'background-color':item.categorie ==='Education' ? 'azure' : 'white' }" >
+            <p class="card-text">{{item.date}}</p>
+
+          <h5 class="card-title">{{item.titre}}</h5>
+          <p class="card-text">{{item.contenu}}</p>
+
+          <a href="#" class="btn btn-primary">More</a>
+          <a  [routerLink]="['/updateArticle',item.id]" class="btn btn-primary">Modify</a>
+
+         <a (click)="deleteFromDad(item.id)" class="btn btn-danger">Delete</a> 
+        </div>
+  </div>
+<!-- </div> -->

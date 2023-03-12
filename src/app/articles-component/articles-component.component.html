@@ -14,21 +14,8 @@ width: 50%;padding: 10px;">
     <div  *ngFor="let a of listeArticle">
 
       <!-- <div class="card" *ngIf="a.categorie=='Travail'"> -->
-               <div class="card"> 
+             <app-item [item]="a" (send)="deleteArticles($event)"></app-item>
 
-        <div class="card-body" [ngStyle]="{'background-color':a.categorie ==='Education' ? 'azure' : 'white' }" >
-            <p class="card-text">{{a.date}}</p>
-
-          <h5 class="card-title">{{a.titre}}</h5>
-          <p class="card-text">{{a.contenu}}</p>
-
-          <a href="#" class="btn btn-primary">More</a>
-          <a  [routerLink]="['/updateArticle',a.id]" class="btn btn-danger">Modify</a>
-
-          <a (click)="deleteArticles(a.id)" class="btn btn-danger">Delete</a>
-
-        </div>
-    </div>
     </div>
 
   </div>
